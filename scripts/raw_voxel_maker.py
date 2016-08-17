@@ -17,5 +17,5 @@ pointdata = data.flatten()
 pointdata *= 255/pointdata.max()
 
 #output to file
-binfile = open('{:}_raw_test.raw'.format(filename[-4:]), 'wb')
+binfile = open('{:}_{:}_raw.raw'.format(filename[-4:], field), 'wb')
 pointdata.astype(np.uint8).tofile(binfile)
