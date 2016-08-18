@@ -28,7 +28,6 @@ opts,args = o.parse_args(sys.argv[5:])
 file_list = glob.glob(opts.glob_pat)
 animate_length = len(file_list)
 skip_length = 0
-files = sys.argv[5:]
 
 #initialize counters
 rot_begin = 0. #frame to start animation on
