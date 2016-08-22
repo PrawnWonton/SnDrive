@@ -16,7 +16,7 @@ opts,args = o.parse_args(sys.argv[1:])
 file_list = glob.glob(opts.glob_pat)
 field = opts.field
 
-max_list = []
+max_list = yt.YTArray([])
 min_list = []
 
 for filepath in sorted(file_list):
@@ -33,7 +33,7 @@ for dataset in sorted(file_list):
     ds = yt.load(dataset)
     cube = ds.smoothed_covering_grid(0, [0,0,0], dims=ds.domain_dimensions)
     data = cube[field]
-    data = data.flatten()
+    data = data.to_ndarray()
     data -= super_min
     data = data/super_max
     pointdata = data.flatten()
