@@ -33,7 +33,7 @@ for dataset in sorted(file_list):
     ds = yt.load(dataset)
     cube = ds.smoothed_covering_grid(0, [0,0,0], dims=ds.domain_dimensions)
     data = cube[field]
-
+    data = data.flatten()
     data -= super_min
     data = data/super_max
     pointdata = data.flatten()
