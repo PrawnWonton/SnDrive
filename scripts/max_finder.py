@@ -16,7 +16,7 @@ opts,args = o.parse_args(sys.argv[1:])
 file_list = glob.glob(opts.glob_pat)
 field = opts.field
 
-max_list = yt.YTArray([])
+max_list = []
 min_list = []
 
 for filepath in sorted(file_list):
