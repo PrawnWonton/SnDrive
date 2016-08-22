@@ -17,25 +17,28 @@ file_list = glob.glob(opts.glob_pat)
 field = opts.field
 
 max_list = []
+min_list = []
 
 for filepath in sorted(file_list):
     ds = yt.load(filepath)
     cube = ds.smoothed_covering_grid(0, [0,0,0], dims=ds.domain_dimensions)
     data = cube[field]
     max_list.append(data.max())
+    min_list.append(data.min())
 
 super_max = np.max(max_list)
+super_min = np.min(min_list)
 
 for dataset in sorted(file_list):
     ds = yt.load(dataset)
     cube = ds.smoothed_covering_grid(0, [0,0,0], dims=ds.domain_dimensions)
     data = cube[field]
 
-    data -= data.min()
+    data -= super_min
     data = data/super_max
     pointdata = data.flatten()
     pointdata *= 255
 
     #output to file
-    binfile = open('{:}_{:}_raw.raw'.format(dataset[-4:], field), 'wb')
+    binfile = open('{:}_{:}.raw'.format(dataset[-4:], field), 'wb')
     pointdata.astype(np.uint8).tofile(binfile)
