@@ -42,7 +42,7 @@ raw_file_counter = 0
 bpy.data.materials['Material'].use_textures[0] = True
 bpy.data.materials['Material'].use_textures[1] = False
 
-for filepath in sorted(file_list):
+for filepath in sorted(file_list, reverse=True):
     if (raw_file_counter < animate_length-1):
         #--- Render time evolution
         bpy.data.scenes["Scene"].frame_start = i
