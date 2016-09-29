@@ -24,7 +24,6 @@ o.add_option('--glob_pat',type=str,
 
 opts,args = o.parse_args(sys.argv[5:])
 ###
-
 file_list = glob.glob(opts.glob_pat)
 animate_length = len(file_list)
 skip_length = 0
