@@ -56,8 +56,8 @@ for filepath in sorted(file_list):
         bpy.data.textures["hydrogen"].voxel_data.filepath = filepath
 
         #--- Start animating ---#
-        print("rendered frame (a): {:}, file: {:}".format(i, filepath))
-        #bpy.ops.render.render(animation=True)
+        #print("rendered frame (a): {:}, file: {:}".format(i, filepath))
+        bpy.ops.render.render(animation=True)
         i = i+frame_count
         raw_file_counter += 1
     elif (i >= seg_1 and i < seg_3):
@@ -65,8 +65,8 @@ for filepath in sorted(file_list):
         bpy.data.scenes["Scene"].frame_end = seg_3
         bpy.data.textures["hydrogen"].voxel_data.filepath = filepath
 
-        print("rendered frame (b): {:}, file: {:}".format(i, filepath))
-        #bpy.ops.render.render(animation=True)
+        #print("rendered frame (b): {:}, file: {:}".format(i, filepath))
+        bpy.ops.render.render(animation=True)
         i = seg_3
 #    elif (i >= seg_2 and i < seg_3):
 #        bpy.data.scenes["Scene"].frame_start = i
@@ -79,7 +79,7 @@ for filepath in sorted(file_list):
     elif (i >= seg_3 and i <= animation_end_frame):
         bpy.data.scenes["Scene"].frame_start = i
         bpy.data.scenes["Scene"].frame_end = i
-        print('rendered frame (c): {:}, file: {:}'.format(i, filepath))
+        #print('rendered frame (c): {:}, file: {:}'.format(i, filepath))
         i += 1
-        #bpy.ops.render.render(animation=True)
+        bpy.ops.render.render(animation=True)
         #sys.exit()
