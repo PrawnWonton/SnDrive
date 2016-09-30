@@ -52,13 +52,13 @@ for filepath in sorted(file_list):
     if (i <= seg_1):
         #--- Render time evolution
         bpy.data.scenes["Scene"].frame_start = i
-        bpy.data.scenes["Scene"].frame_end = i+frame_count-1
+        bpy.data.scenes["Scene"].frame_end = i+frame_count
         bpy.data.textures["hydrogen"].voxel_data.filepath = filepath
 
         #--- Start animating ---#
         print("rendered frame (a): {:}, file: {:}".format(i, filepath))
         #bpy.ops.render.render(animation=True)
-        i = i+frame_count+1
+        i = i+frame_count
         raw_file_counter += 1
     elif (i > seg_1 and i < seg_2):
         bpy.data.scenes["Scene"].frame_start = i
