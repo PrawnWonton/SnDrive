@@ -52,7 +52,7 @@ for filepath in sorted(file_list):
     if (i < seg_1):
         #--- Render time evolution
         bpy.data.scenes["Scene"].frame_start = i
-        bpy.data.scenes["Scene"].frame_end = i+frame_count
+        bpy.data.scenes["Scene"].frame_end = i#+frame_count
         bpy.data.textures["hydrogen"].voxel_data.filepath = filepath
 
         #--- Start animating ---#
