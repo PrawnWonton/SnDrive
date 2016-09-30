@@ -46,14 +46,14 @@ for filepath in sorted(file_list):
     if (i < raw_file_counter):
         print("skipped file (a): {:}, file: {:}".format(i, filepath))
         i += 1
-    elif (i <= animation_end_frame):
+    elif (i >= raw_file_counter and i <= animation_end_frame):
         #--- Render time evolution
         bpy.data.scenes["Scene"].frame_start = i
         bpy.data.scenes["Scene"].frame_end = i#+frame_count
         bpy.data.textures["hydrogen"].voxel_data.filepath = filepath
 
         #--- Start animating ---#
-        print("rendered frame (a): {:}, file: {:}".format(i, filepath))
+        print("rendered frame (b): {:}, file: {:}".format(i, filepath))
         #bpy.ops.render.render(animation=True)
         i = i+1
         #raw_file_counter += 1
