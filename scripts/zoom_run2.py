@@ -62,7 +62,7 @@ for filepath in sorted(file_list):
         raw_file_counter += 1
     elif (i >= seg_1 and i < seg_3):
         bpy.data.scenes["Scene"].frame_start = i
-        bpy.data.scenes["Scene"].frame_end = seg_2
+        bpy.data.scenes["Scene"].frame_end = seg_3
         bpy.data.textures["hydrogen"].voxel_data.filepath = filepath
 
         print("rendered frame (b): {:}, file: {:}".format(i, filepath))
