@@ -43,7 +43,7 @@ raw_file_counter = 20
 #bpy.data.materials['Material'].use_textures[0] = False
 
 for filepath in sorted(file_list):
-    if (i <= raw_file_counter):
+    if (i < raw_file_counter):
         print("skipped file (a): {:}, file: {:}".format(i, filepath))
         i += 1
     elif (i <= animation_end_frame):
@@ -55,5 +55,5 @@ for filepath in sorted(file_list):
         #--- Start animating ---#
         print("rendered frame (a): {:}, file: {:}".format(i, filepath))
         #bpy.ops.render.render(animation=True)
-        i = i+frame_count
-        raw_file_counter += 1
+        i = i+1
+        #raw_file_counter += 1
