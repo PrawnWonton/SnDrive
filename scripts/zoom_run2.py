@@ -74,3 +74,4 @@ for filepath in sorted(file_list):
         print('rendered frame (c): {:}, file: {:}'.format(i, filepath))
         i += 1
         #bpy.ops.render.render(animation=True)
+        sys.exit()
