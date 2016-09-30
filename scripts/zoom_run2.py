@@ -49,7 +49,7 @@ bpy.data.materials['Material'].use_textures[0] = True
 bpy.data.materials['Material'].use_textures[1] = False
 
 for filepath in sorted(file_list):
-    if (i <= seg_1):
+    if (i < seg_1):
         #--- Render time evolution
         bpy.data.scenes["Scene"].frame_start = i
         bpy.data.scenes["Scene"].frame_end = i+frame_count
