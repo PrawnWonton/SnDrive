@@ -67,7 +67,7 @@ for filepath in sorted(file_list):
 
         print("rendered frame (b): {:}, file: {:}".format(i, filepath))
         #bpy.ops.render.render(animation=True)
-        i = seq_2
+        i = seg_2
     else:
         bpy.data.scenes["Scene"].frame_start = i
         bpy.data.scenes["Scene"].frame_end = animation_end_frame
